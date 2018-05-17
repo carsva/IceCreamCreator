@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import IceCream from './Components/IceCream';
+import Picker from './Components/Picker';
 import './App.css';
 
 // const iceCream = [
@@ -42,8 +43,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      iceCream: JSON.parse(localStorage.iceCream)
+      iceCream: JSON.parse(localStorage.iceCream),
+      background: 'white'
     }
+
   }
 
 deleteIceCream(flavour) {
@@ -77,8 +80,17 @@ onSubmitHandler(e) {
   console.log(localStorage.iceCream)
 }
 
-  render() {
+onChangeColor(color) {
+console.log(color.hex)
+this.setState ({
+  background: color.hex
 
+})
+
+}
+
+  render() {
+    console.log(this.state)
     let iceCreamMap = this.state.iceCream.map(iceCream => {
       return (
         <IceCream
@@ -92,16 +104,19 @@ onSubmitHandler(e) {
       )
     })
 
+
+
     return (
       <div className="App">
         {iceCreamMap}
         <form onSubmit={this.onSubmitHandler.bind(this)}>
           <input type="text" placeholder="Flavour" ref="flavour"/>
           <input type="text" placeholder="Nuts" ref="nuts"/>
-          <input type="text" placeholder="Color" ref="color"/>
+          <input type="text" placeholder="Color" ref="color" value={this.state.background}/>
           <input type="text" placeholder="Price" ref="price"/>
           <button className="btn btn-primary">Create Ice cream</button>
         </form>
+        <Picker onChangeColor={this.onChangeColor.bind(this)}/>
       </div>
     )
   }
