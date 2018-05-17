@@ -1,0 +1,6 @@
+[0517/111443.934:ERROR:process_info.cc(329)] VirtualQueryEx: Åtkomst nekad. (0x5)
+[0517/111443.937:ERROR:process_info.cc(550)] ReadMemoryInfo failed
+[0517/111443.958:ERROR:process_reader_win.cc(151)] SuspendThread: Åtkomst nekad. (0x5)
+[0517/111443.958:ERROR:exception_snapshot_win.cc(88)] thread ID 18848 not found in process
+[0517/111443.959:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0517/111443.959:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Ett försök gjordes att använda en befintlig process. (0xc000010a)
