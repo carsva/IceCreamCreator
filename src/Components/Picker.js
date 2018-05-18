@@ -9,7 +9,7 @@ class Picker extends Component {
    onChangeColor() {
      let {onChangeColor} = this.props;
      let newColor = this.state.background;
-     console.log(newColor)
+     
      onChangeColor(newColor);
    }
 
@@ -20,7 +20,7 @@ class Picker extends Component {
    };
 
    render() {
-     console.log(this.state.background)
+
 
      return (
        <SketchPicker

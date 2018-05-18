@@ -45,14 +45,14 @@ class App extends Component {
     this.state = {
       iceCream: [],
       // iceCream: JSON.parse(localStorage.iceCream),
-      background: 'white'
+      background: []
     }
 
   }
 
 deleteIceCream(flavour) {
   let iceCream = this.state.iceCream;
-  console.log(iceCream)
+
   let filteredIceCream = iceCream.filter(iceCream => {
     return iceCream.flavour !== flavour;
   })
@@ -60,7 +60,7 @@ deleteIceCream(flavour) {
     iceCream: filteredIceCream
   })
   localStorage.iceCream = JSON.stringify(filteredIceCream);
-  console.log(JSON.parse(localStorage.iceCream))
+
 }
 
 onSubmitHandler(e) {
@@ -82,7 +82,7 @@ onSubmitHandler(e) {
 }
 
 onChangeColor(color) {
-console.log(color.hex)
+
 this.setState ({
   background: color.hex
 
@@ -91,7 +91,7 @@ this.setState ({
 }
 
   render() {
-    console.log(this.state)
+
     let iceCreamMap = this.state.iceCream.map(iceCream => {
       return (
         <IceCream
@@ -106,15 +106,14 @@ this.setState ({
     })
 
 
-
     return (
       <div className="App">
         {iceCreamMap}
         <form onSubmit={this.onSubmitHandler.bind(this)}>
           <input type="text" placeholder="Flavour" ref="flavour"/>
           <input type="text" placeholder="Nuts" ref="nuts"/>
-          <input type="text" placeholder="Color" ref="color" value={this.state.background}/>
           <input type="text" placeholder="Price" ref="price"/>
+          <input type="submit" ref="color" value={this.state.background}></input>
           <button className="btn btn-primary">Create Ice cream</button>
         </form>
         <Picker onChangeColor={this.onChangeColor.bind(this)}/>
