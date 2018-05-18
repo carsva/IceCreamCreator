@@ -43,7 +43,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      iceCream: JSON.parse(localStorage.iceCream),
+      iceCream: [],
+      // iceCream: JSON.parse(localStorage.iceCream),
       background: 'white'
     }
 
