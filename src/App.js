@@ -105,6 +105,9 @@ this.setState ({
       )
     })
 
+    var style = {
+         backgroundColor: this.state.background,
+       };
 
     return (
       <div className="App">
@@ -113,11 +116,14 @@ this.setState ({
           <input type="text" placeholder="Flavour" ref="flavour"/>
           <input type="text" placeholder="Nuts" ref="nuts"/>
           <input type="text" placeholder="Price" ref="price"/>
-          <input type="submit" ref="color" value={this.state.background}></input>
+          <input type="hidden" ref="color" value={this.state.background}></input>
           <button className="btn btn-primary">Create Ice cream</button>
         </form>
-        <Picker onChangeColor={this.onChangeColor.bind(this)}/>
-      </div>
+        <div className="container">
+        <Picker className="block" onChangeColor={this.onChangeColor.bind(this)}/>
+        <div style={style} className="show"></div>
+        </div>
+    </div>
     )
   }
 }
