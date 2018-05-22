@@ -3,7 +3,10 @@ import IceCream from './Components/IceCream';
 import Picker from './Components/Picker';
 import './App.css';
 
-// const iceCream = [
+
+
+
+// let iceCream = [
 //   {
 //     flavour: 'Chocolate',
 //     nuts: 'Plenty of nuts',
@@ -36,19 +39,37 @@ import './App.css';
 //   }
 //
 // ];
-//
+
 // localStorage.iceCream = JSON.stringify(iceCream);
+let iceCream = {};
+
+  if(localStorage) {
+    let localIceCream = JSON.parse(localStorage.iceCream);
+    console.log(localStorage.iceCream);
+    console.log(localIceCream);
+    console.log('there is a local storage');
+    iceCream = localIceCream;
+    console.log(iceCream);
+    // this.setState ({
+    //   iceCream: localIceCream
+    // })
+  }
+
+
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      iceCream: [],
-      // iceCream: JSON.parse(localStorage.iceCream),
+      iceCream: iceCream,
       background: []
     }
 
   }
+
+
+
 
 deleteIceCream(flavour) {
   let iceCream = this.state.iceCream;
@@ -74,6 +95,7 @@ onSubmitHandler(e) {
     price: this.refs.price.value,
     palette: this.refs.color.value
   })
+
   this.setState ({
     iceCream: iceCream
   })
@@ -89,6 +111,11 @@ this.setState ({
 })
 
 }
+
+
+
+
+
 
   render() {
 
