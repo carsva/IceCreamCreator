@@ -9,6 +9,11 @@
   height: 180px;
 }
 
+.svgcolor {
+fill: #ffff;
+
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -20,11 +25,8 @@
 }
 
 .show {
-  height: 100px;
-  width: 100px;
-  border-radius: 100px;
-  background-color: #B8E986;
-
+  height: 200px;
+  width: 200px;
 
 }
 
