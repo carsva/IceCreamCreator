@@ -60,12 +60,14 @@ class App extends Component {
     super();
     this.state = {
       iceCream: iceCream,
-      background: []
+      background: '#ff9999'
     }
 
   }
 
-
+componentdidMount() {
+  document.querySelector('input[type="color"]').value = '#800000'
+}
 
 
 deleteIceCream(flavour) {
@@ -101,7 +103,6 @@ onSubmitHandler(e) {
 }
 
 onChangeColor(e) {
-
 this.setState({
   background: e.target.value
 })
@@ -112,6 +113,8 @@ this.setState({
 
 
   render() {
+
+
 
     let iceCreamMap = this.state.iceCream.map(iceCream => {
       return (
@@ -132,17 +135,15 @@ this.setState({
        };
 
 
-
     return (
-
       <div className="container-full">
         {iceCreamMap}
         <form className="formwrapper" onSubmit={this.onSubmitHandler.bind(this)}>
           <input type="text" placeholder="Flavour" ref="flavour"/>
-          <input type="text" placeholder="Nuts" ref="nuts"/>
-          <input type="text" placeholder="Price" ref="price"/>
-          <input className="picker" type="color" onChange={this.onChangeColor.bind(this)} ref="color" />
-          <br /><button className="btn btn-primary">Create Ice cream</button>
+          <input type="text" placeholder="What kinda nuts?" ref="nuts"/>
+          <input className="text" type="text" placeholder="Price (kr)" ref="price" />
+          <input type="color" onChange={this.onChangeColor.bind(this)} ref="color" value={this.state.background}/>
+          <br /><button className="bottom btn btn-primary">Create Ice cream</button>
         </form>
         <div className="formwrapper">
         <svg className="show" id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182.82 214.94"><path className="kex" d="M120,237A190.07,190.07,0,0,0,65.45,130.27C54.05,119.1,40.61,108.42,36.35,93l182.81,1.72c-37.95,44.46-61.49,99.81-99.79,144" transform="translate(-36.35 -23.79)"/>
@@ -153,5 +154,8 @@ this.setState({
     )
   }
 }
+
+
+
 
 export default App;
