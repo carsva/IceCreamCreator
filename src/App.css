@@ -1,12 +1,8 @@
-.picker {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 720px;
-  height: 180px;
+p {
+  color: white;
+  margin: 0px !important;
+
+
 }
 
 .svgcolor {
@@ -14,55 +10,38 @@ fill: #ffff;
 
 }
 
-.container {
-  display: flex;
-  justify-content: center;
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.blocks {
-  display: inline-block;
+.kex {
+  fill: beige;
+}
 
+.formwrapper {
+  justify-content: center;
+  text-align: center;
+}
+
+.knappdiv {
+  font-size: 10px;
+  border: 0px;
+  padding-left: 10px;
+}
+
+.svgdiv {
+  justify-content: center;
+  text-align: center;
 }
 
 .show {
   height: 200px;
   width: 200px;
-
 }
 
-.App {
-  text-align: center;
-  padding: 0px;
-  margin-bottom: !important 0px;
-
-}
-
-#hej {
-color: purple;
-padding: 20px;
-
-}
-
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
