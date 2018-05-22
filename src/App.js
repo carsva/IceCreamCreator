@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import IceCream from './Components/IceCream';
-import Picker from './Components/Picker';
 import './App.css';
 
 
@@ -45,11 +44,8 @@ let iceCream = {};
 
   if(localStorage) {
     let localIceCream = JSON.parse(localStorage.iceCream);
-    console.log(localStorage.iceCream);
-    console.log(localIceCream);
-    console.log('there is a local storage');
     iceCream = localIceCream;
-    console.log(iceCream);
+
     // this.setState ({
     //   iceCream: localIceCream
     // })
@@ -103,16 +99,13 @@ onSubmitHandler(e) {
   console.log(localStorage.iceCream)
 }
 
-onChangeColor(color) {
+onChangeColor(e) {
 
-this.setState ({
-  background: color.hex
-
+this.setState({
+  background: e.target.value
 })
 
 }
-
-
 
 
 
@@ -143,13 +136,13 @@ this.setState ({
           <input type="text" placeholder="Flavour" ref="flavour"/>
           <input type="text" placeholder="Nuts" ref="nuts"/>
           <input type="text" placeholder="Price" ref="price"/>
-          <input type="hidden" ref="color" value={this.state.background}></input>
+          <input type="color" onChange={this.onChangeColor.bind(this)} ref="color" />
           <button className="btn btn-primary">Create Ice cream</button>
         </form>
         <div className="container">
-        <Picker className="block" onChangeColor={this.onChangeColor.bind(this)}/>
         <div style={style} className="show"></div>
         </div>
+
     </div>
     )
   }
