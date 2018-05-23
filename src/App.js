@@ -96,7 +96,7 @@ this.setState({
         <form className="formwrapper" onSubmit={this.onSubmitHandler.bind(this)}>
           <input type="text" placeholder="Flavour" ref="flavour"/>
           <input type="text" placeholder="What kinda nuts?" ref="nuts"/>
-          <input className="text" type="text" placeholder="Price (kr)" ref="price" />
+          <input className="text" type="text" placeholder="Price (dollares)" ref="price" />
           <input type="color" onChange={this.onChangeColor.bind(this)} ref="color" value={this.state.background}/>
           <br /><button className="bottom btn btn-primary">Create Ice cream</button>
         </form>
