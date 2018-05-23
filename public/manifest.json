@@ -3,7 +3,7 @@
   "name": "Ice cream creator",
   "description": "Samling av recept",
   "icons": [{
-    "src": "/img/icon.png",
+    "src": "/logo.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
