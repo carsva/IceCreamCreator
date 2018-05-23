@@ -10,9 +10,6 @@ let iceCream = [];
     iceCream = localIceCream;
   }
 
-
-
-
 class App extends Component {
   constructor() {
     super();
@@ -20,7 +17,6 @@ class App extends Component {
       iceCream: iceCream,
       background: '#ff9999'
     }
-
   }
 
 componentdidMount() {
@@ -95,6 +91,7 @@ this.setState({
 
     return (
       <div className="container-full">
+        <img src="logo.png" className="logo"/>
         {iceCreamMap}
         <form className="formwrapper" onSubmit={this.onSubmitHandler.bind(this)}>
           <input type="text" placeholder="Flavour" ref="flavour"/>
