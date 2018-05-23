@@ -3,53 +3,11 @@ import IceCream from './Components/IceCream';
 import glass from './glass.svg';
 import './App.css';
 
-
-
-
-// let iceCream = [
-//   {
-//     flavour: 'Chocolate',
-//     nuts: 'Plenty of nuts',
-//     price: 25,
-//     palette: 'brown'
-//   },
-//   {
-//     flavour: 'Vanilla',
-//     nuts: 'No nuts',
-//     price: 25,
-//     palette: 'yellow'
-//   },
-//   {
-//     flavour: 'Bubble-Gum',
-//     nuts: 'No nuts',
-//     price: 20,
-//     palette: 'pink'
-//   },
-//   {
-//     flavour: 'Pear',
-//     nuts: 'Some nuts',
-//     price: 25,
-//     palette: 'green'
-//   },
-//   {
-//     flavour: 'Orange dawn',
-//     nuts: 'Crazy much nuts',
-//     price: 23,
-//     palette: 'orange'
-//   }
-//
-// ];
-
-// localStorage.iceCream = JSON.stringify(iceCream);
 let iceCream = {};
 
   if(localStorage) {
     let localIceCream = JSON.parse(localStorage.iceCream);
     iceCream = localIceCream;
-
-    // this.setState ({
-    //   iceCream: localIceCream
-    // })
   }
 
 
