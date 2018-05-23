@@ -3,7 +3,7 @@ import IceCream from './Components/IceCream';
 import glass from './glass.svg';
 import './App.css';
 
-let iceCream = {};
+let iceCream = [];
 
   if(localStorage.iceCream) {
     let localIceCream = JSON.parse(localStorage.iceCream);
