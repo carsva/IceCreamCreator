@@ -5,7 +5,7 @@ import './App.css';
 
 let iceCream = {};
 
-  if(localStorage) {
+  if(localStorage.iceCream) {
     let localIceCream = JSON.parse(localStorage.iceCream);
     iceCream = localIceCream;
   }
