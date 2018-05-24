@@ -63,12 +63,17 @@ this.setState({
 
 }
 
+onColorPicker() {
+console.log('yes')
+  document.querySelector('.opener')
+  .addEventListener('click',
+  e => document.querySelector('.btn-invisible').click()
+  );
+}
 
 
 
   render() {
-
-
 
     let iceCreamMap = this.state.iceCream.map(iceCream => {
       return (
@@ -91,14 +96,18 @@ this.setState({
 
     return (
       <div className="container-full">
+
+        <input type="color" className="btn-invisible" />
         <img src="logo.png" className="logo"/>
         {iceCreamMap}
         <form className="formwrapper" onSubmit={this.onSubmitHandler.bind(this)}>
-          <input type="text" placeholder="Flavour" ref="flavour"/>
-          <input type="text" placeholder="What kinda nuts?" ref="nuts"/>
-          <input className="text" type="text" placeholder="Price (dollares)" ref="price" />
-          <input type="color" onChange={this.onChangeColor.bind(this)} ref="color" value={this.state.background}/>
-          <br /><button className="bottom btn btn-primary">Create Ice cream</button>
+          <input className="input-field" type="text" placeholder="Flavour" ref="flavour"/>
+          <input className="input-field" type="text" placeholder="eg. with a salty experience" ref="nuts"/>
+          <input className="input-field" type="text" placeholder="Price (dollar)" ref="price" /><br/>
+          <input type="color" onChange={this.onChangeColor.bind(this)}
+           ref="color" className="picker" value={this.state.background}/>
+         <label onClick={() => document.querySelector('.picker').click()} className="opener" style={style}></label>
+         <button className="bottom btn btn-primary">Create Ice cream</button>
         </form>
         <div className="formwrapper">
         <svg className="show" id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182.82 214.94"><path className="kex" d="M120,237A190.07,190.07,0,0,0,65.45,130.27C54.05,119.1,40.61,108.42,36.35,93l182.81,1.72c-37.95,44.46-61.49,99.81-99.79,144" transform="translate(-36.35 -23.79)"/>
